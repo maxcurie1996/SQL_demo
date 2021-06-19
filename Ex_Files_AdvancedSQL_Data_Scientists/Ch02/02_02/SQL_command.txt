@@ -1,0 +1,34 @@
+--Select all, similar to import the data
+--From staff table, import gender
+SELECT 
+--Return the count of the rows
+	gender, count(*)
+--Get the information of staff
+FROM 
+	staff
+GROUP BY 
+	gender
+
+--Limit to the first 10 rows
+--LIMIT 
+--	10
+	
+
+SELECT 
+--Return the maximum and minimum salary 
+	max(salary), min(salary)
+FROM 
+	staff
+
+
+SELECT 
+--Return the maximum and minimum salary for each department
+	department, max(salary), min(salary)
+FROM 
+	staff
+GROUP BY
+	department
+
+SELECT department, round(sum(salary),2), round(avg(salary),2), round(var_pop(salary),2), stddev_pop(salary)
+FROM staff
+GROUP BY department
